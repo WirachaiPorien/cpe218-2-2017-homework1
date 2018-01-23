@@ -11,15 +11,15 @@ public class Homework1 {
 	private static Scanner scanner;
 	static Stack restack = new Stack();
 	static Stack stack = new Stack();
-	static Node root;
-	public static Node current=root;
+	static  Node root;
+	//public static Node current=root;
 	
 	
 	
 
 
-	private static boolean isOperator(char c){
-		  if(c == '+' || c == '-' || c == '*' || c =='/' || c == '^')
+	public static boolean isOperator(char c){
+		  if(c == '+' || c == '-' || c == '*' || c =='/')
 		   return true;
 		  return false;
 		 }
@@ -100,10 +100,10 @@ public class Homework1 {
 	}
 	
 	public static void main(String[] args) {
-		String data = "12+";
+		String data = "251-*32*+";
 		if(args.length>0) {
 			data = args[0];
-		}
+		}else System.exit(1);
 //		scanner = new Scanner(System.in);
 //		String data = scanner.nextLine();
 		char[] newData = data.toCharArray();
@@ -117,8 +117,12 @@ public class Homework1 {
 		inorder(root);
 		infix(root);
 		System.out.println("="+root.getNodeValue());
+		TreeDemo.main(root);
+		
 	}
+	
 }
+
 		
 
 
